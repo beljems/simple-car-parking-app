@@ -8,7 +8,7 @@
   "password": {
     "required": "Password must not be empty.",
     "confirm": {
-      "required": "Confirm password must match not be empty.",
+      "required": "Confirm password must not be empty.",
       "match": "Confirm password must match the password.",
     },
   },
@@ -16,8 +16,8 @@
     "required": "Mobile must not be empty.",
   },
   "card": {
-    "number": "Card number must match not be empty.",
-    "name": "Account name must match not be empty.",
+    "number": "Card number must not be empty.",
+    "name": "Account name must not be empty.",
   },
   "agree": {
     "required": "You must agree with our terms and conditions.",

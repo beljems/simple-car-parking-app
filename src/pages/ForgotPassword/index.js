@@ -29,6 +29,10 @@ const ForgotPassword = ({navigation}) => {
       Alert.alert(messages.email.required);
     } else {
       setConfirm(true)
+
+      setTimeout(() => {
+        navigation.navigate('Login');
+      }, 1500)
     }
   }
 

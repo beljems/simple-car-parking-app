@@ -24,9 +24,9 @@ const ParkingSlots = ({ parking }) => {
 
   // console.log(hoursValue);
 
-  useEffect(() => {
-    setVisible(visible)
-  }, [])
+  // useEffect(() => {
+  //   setVisible(visible)
+  // }, [])
 
   const handleParking = () => {
     setActiveModal(parking)

@@ -122,7 +122,7 @@ const ParkingSlots = ({ parking }) => {
     <View key={`parking-${parking.id}`} style={styles.parking}>
       <View style={styles.parkingColumn}>
         <Text style={styles.parkingTitle}>{parking.title}</Text>
-        <Text style={styles.hoursPrice}>x {parking.spots}</Text>
+        <Text style={styles.hoursPrice}>{parking.free} / {parking.spots}</Text>
         <View style={styles.hours}>
           <View style={styles.hoursInner}>
             <ModalDropdown 

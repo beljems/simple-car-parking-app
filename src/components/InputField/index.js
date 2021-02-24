@@ -13,16 +13,13 @@ const InputField = ({
   keyboardType,
   multiline,
   onChange,
-  autoFocus,
+  // autoFocus,
   disabled,
   onFocus,
-  //value,
   style,
   styleWrap,
-  placeholder
+  // placeholder
 }) => {
-  const [value, onChangeText] = useState(placeholder);
-
   return (
     <View style={styleWrap}>
       {label ? (<Text style={styles.label}>{label}</Text>) : null}
@@ -32,8 +29,7 @@ const InputField = ({
         returnKeyType="done"
         secureTextEntry={type === 'password' ? true : false}
         multiline={multiline}
-        value={value}
-        onChangeText={text => onChangeText(text)}
+        onChangeText={onChange}
         onFocus={onFocus}
         style={multiline
           ? [styles.textarea, style]
@@ -48,7 +44,7 @@ InputField.defaultProps = {
   type: 'none',
   multiline: false,
   keyboardType: 'default',
-  onChange: (text) => {},
+  onChange: (txt) => {},
   autoFocus: true,
   disabled: false,
   onFocus: () => {},

@@ -12,19 +12,20 @@ import InputField from './../../components/InputField';
 import SelectField from './../../components/SelectField';
 import Button from './../../components/Button';
 import * as theme from '../../theme';
-import styles from './Register.css';
+import styles from './Payment.css';
 
 const messages = require('../../json/errors.json');
 
-const Register = ({navigation}) => {
-  const [isAgree, setIsAgree] = useState(true);
+const Payment = ({route, navigation}) => {
+  const {totalPrice} = route.params;
+  const [isAgree, setIsAgree] = useState(false);
   const [confirm, setConfirm] = useState(false);
-  // const gender = ["Male", "Female"];
+  const cards = ["Credit Card", "Debit Card", "Prepaid Card"];
   const [values, setValues] = useState({
-    email: '',
-    mobile: '',
-    password: '',
-    confirmPassword: '',
+    cardOptions: '',
+    cardNumber: '',
+    accountName: '',
+    totalPayment: totalPrice,
     agree: ''
   });
 
@@ -40,37 +41,23 @@ const Register = ({navigation}) => {
   } 
 
   const handleSubmit = () => {
-    if(!values.email 
-      && !values.mobile
-      && !values.password
-      && !values.confirmPassword) {
-      Alert.alert(messages.all.required);
+    if(!values.cardNumber) {
+      Alert.alert(messages.card.number);
     }
-    else if(!values.email) {
-      Alert.alert(messages.email.required);
-    }
-    else if(!values.mobile) {
-      Alert.alert(messages.mobile.required);
-    }
-    else if(!values.password) {
-      Alert.alert(messages.password.required);
-    }
-    else if(!values.confirmPassword) {
-      Alert.alert(messages.password.confirm.required);
-    }
-    else if(values.password !== values.confirmPassword) {
-      Alert.alert(messages.password.confirm.match);
+    if(!values.accountName) {
+      Alert.alert(messages.card.name);
     }
     else if(isAgree !== true) {
-      Alert.alert(messages.agree.required);
+      Alert.alert(messages.agree.payment);
     }
     else {
       values.agree = true;
+      console.log(values);
       setConfirm(true);
-      // console.log(values);
+
       setTimeout(() => {
-        navigation.navigate('Login')
-      }, 1500);
+        navigation.navigate('Home')
+      }, 2000);
     }
   }
 
@@ -88,36 +75,33 @@ const Register = ({navigation}) => {
                 <Icon name="arrowleft" size={theme.SIZES.icon30} color={theme.COLORS.white} />
               </Text>
             </TouchableOpacity>
-            <Text style={styles.heading}>Sign Up</Text>
+            <Text style={styles.heading}>Payment Details</Text>
           </View>
           {!confirm ? (
             <View>
               <View style={styles.form}>
                 <View style={styles.inputGroup}>
-                  <InputField 
-                    label={'Email Address'}
-                    onChange={(txt) => handleChange('email', txt)}
+                  <SelectField 
+                    data={cards}
+                    label={'Card Options'}
+                    onChange={(txt) => handleChange('cardOptions', txt)}
                     style={styles.input} />
                 </View>
                 <View style={styles.inputGroup}>
                   <InputField 
-                    label={'Mobile Number'}
-                    onChange={(txt) => handleChange('mobile', txt)}
+                    label={'Card Number'}
+                    onChange={(txt) => handleChange('cardNumber', txt)}
                     style={styles.input} />
                 </View>
                 <View style={styles.inputGroup}>
                   <InputField 
-                    type={'password'}
-                    label={'Password'}
-                    onChange={(txt) => handleChange('password', txt)}
+                    label={'Account Name'}
+                    onChange={(txt) => handleChange('accountName', txt)}
                     style={styles.input} />
                 </View>
-                <View style={styles.inputGroup}>
-                  <InputField 
-                    type={'password'}
-                    label={'Confirm Password'}
-                    onChange={(txt) => handleChange('confirmPassword', txt)}
-                    style={styles.input} />
+                <View style={styles.total}>
+                  <Text style={styles.totalText}>Total:</Text>
+                  <Text style={[styles.totalText, styles.totalPrice]}>$ {totalPrice}</Text>
                 </View>
                 <View style={[styles.inputGroup, styles.inputGroupTerms]}>
                   {isAgree && (
@@ -129,28 +113,24 @@ const Register = ({navigation}) => {
                     onPress={() => handleAgree()}
                     style={styles.check}></Text>
                   <Text style={styles.terms}>
-                    By clicking this box, you agree with our terms of service.</Text>
+                    Please check this to confirm payment details.</Text>
                 </View>
               </View>
               <View style={styles.buttonWrap}>
                 <Button 
-                  text={'Sign Up'}
+                  text={'Confirm'}
                   onPress={handleSubmit} />
               </View>
-              
-              <View style={styles.create}>
-                <Text style={styles.createText}>Already have an account?</Text> 
-                <TouchableOpacity 
-                  onPress={() => navigation.navigate('Login')}
-                  style={styles.createLink}>
-                  <Text style={styles.createLinkText}>Sign In</Text>
-                </TouchableOpacity>
-              </View>
-            </View>) : (<Text style={styles.success}>Successfully registered.</Text>)}
+            </View>) : (
+            <View>
+              <Text style={styles.success}>Successully booked your parking slot.</Text>
+              <Text style={styles.thankyou}>Thank you!</Text>
+            </View>
+            )}
         </View>
       </View>
     </Page>
   );
 };
 
-export default Register;
+export default Payment;

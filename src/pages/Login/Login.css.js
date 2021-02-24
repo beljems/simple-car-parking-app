@@ -1,35 +1,23 @@
+import * as theme from '../../theme';
 import EStyleSheet from 'react-native-extended-stylesheet';
+
 const styles = EStyleSheet.create({
   content: {
     height: '95%',
     paddingHorizontal: '1rem',
-    color: '$black',
+    color: theme.COLORS.black,
   },
   inner: {
     flex: 1,
     flexDirection: 'column',
     justifyContent: 'center'
   },
-  welcome: {
-    fontSize: '1.3rem',
-    color: '$black',
-    textAlign: 'center'
-  },
-  logo: {
-    fontFamily: '$fontDancing',
-    fontSize: '3rem',
-    color: '$black',
-    textAlign: 'center'
-  },
   heading: {
     marginTop: '3rem',
-    fontSize: '1.5rem',
+    fontSize: '2.5rem',
     fontWeight: 'bold',
-    color: '$black'
-  },
-  desc: {
-    fontSize: '1rem',
-    color: '$black'
+    textAlign: 'center',
+    color: theme.COLORS.lighterRed, 
   },
   form: {
     marginTop: '2rem'
@@ -39,16 +27,16 @@ const styles = EStyleSheet.create({
     position: 'relative'
   }),
   input: {
-    paddingLeft: '2rem'
+    paddingLeft: '2.2rem'
   },
   icon: {
     position: 'absolute',
     top: '55%',
-    left: '.6rem',
+    left: '.8rem',
     zIndex: 1
   },
   buttonWrap: {
-    marginTop: '1rem',
+    marginTop: '2.5rem',
     width: '60%',
     alignSelf: 'center'
   },
@@ -56,23 +44,22 @@ const styles = EStyleSheet.create({
     marginLeft: 'auto'
   },
   forgotText: {
-    color: '$lighterRed'
+    fontSize: theme.SIZES.font,
+    color: theme.COLORS.lighterRed
   },
   create: {
-    marginTop: '2rem',
+    marginTop: '.8rem',
     flexDirection: 'row',
     justifyContent: 'center'
   },
-  createText: {
-    color: '$black',
-  },
   createLink: {
     marginLeft: '.2rem',
+    fontSize: theme.SIZES.font,
     borderBottomWidth: 1,
-    borderBottomColor: '$black'
+    borderBottomColor: theme.COLORS.sky
   },
   createLinkText: {
-    color: '$black',
+    color: theme.COLORS.sky
   },
 });
 

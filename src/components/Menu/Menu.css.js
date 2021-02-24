@@ -1,4 +1,6 @@
+import * as theme from '../../theme';
 import EStyleSheet from 'react-native-extended-stylesheet';
+
 const styles = EStyleSheet.create({
   wrap: {
   },
@@ -16,11 +18,11 @@ const styles = EStyleSheet.create({
     textAlign: 'center'
   },
   settings: {
-    backgroundColor: '$lighterRed'
+    backgroundColor: theme.COLORS.lighterRed 
   },
   active: {
     borderBottomWidth: 3,
-    borderBottomColor: '$white' 
+    borderBottomColor: theme.COLORS.white 
   }
 });
 

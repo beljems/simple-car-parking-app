@@ -3,6 +3,7 @@ import {
   SafeAreaView,
   ActivityIndicator
 } from 'react-native';
+import * as theme from '../../theme';
 import styles from './Loading.css';
 
 const Loading = () => {
@@ -10,7 +11,7 @@ const Loading = () => {
     <SafeAreaView style={styles.wrap}>
       <ActivityIndicator 
         size="large" 
-        color="#42c2f5" />
+        color={theme.COLORS.base} />
     </SafeAreaView>
   );
 };

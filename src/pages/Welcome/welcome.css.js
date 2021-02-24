@@ -1,16 +1,13 @@
+import * as theme from '../../theme';
 import EStyleSheet from 'react-native-extended-stylesheet';
+
 const styles = EStyleSheet.create({
   content: {
     display: 'flex',
+    justifyContent: 'center',
     height: '100%',
     paddingHorizontal: '1rem',
-    color: '$white',
-    justifyContent: 'center'
-  },
-  name: {
-    fontSize: '1.7rem',
-    fontWeight: 'bold',
-    textAlign: 'center'
+    color: theme.COLORS.sky,
   },
   headingWrap: {
     marginTop: '1.5rem'
@@ -19,17 +16,11 @@ const styles = EStyleSheet.create({
     fontSize: '2rem',
     fontWeight: 'bold',
     textAlign: 'center',
-    color: '$skyblue'
-  },
-  desc: {
-    marginTop: '1.5rem',
-    fontSize: '1.2rem',
-    textAlign: 'center'
+    color: theme.COLORS.lighterRed
   },
   iconWrap: () => ({
     ...EStyleSheet.value('$logo')
   }),
-  iconParking: {},
   iconArrow: () => ({
     ...EStyleSheet.value('$logoArrow')
   })

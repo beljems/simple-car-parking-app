@@ -9,9 +9,29 @@ import Icon from 'react-native-vector-icons/AntDesign';
 import Page from './../../components/Page';
 import InputField from './../../components/InputField';
 import Button from './../../components/Button';
+import * as theme from '../../theme';
 import styles from './ForgotPassword.css';
 
+const messages = require('../../json/errors.json');
+
 const ForgotPassword = ({navigation}) => {
+  const [email, setEmail] = useState('');
+  const [confirm, setConfirm] = useState(false);
+
+  const handleChangeEmail = (txt) => {
+    setEmail(txt);
+  } 
+
+  const handleSubmit = () => {
+    // console.log(email);
+
+    if(!email) {
+      Alert.alert(messages.email.required);
+    } else {
+      setConfirm(true)
+    }
+  }
+
   return (
     <Page 
       showHeader={true}
@@ -22,23 +42,28 @@ const ForgotPassword = ({navigation}) => {
             <TouchableOpacity
               onPress={() => navigation.pop()}>
               <Text style={styles.back}>
-                <Icon name="arrowleft" size={30} color="#fff" />
+                <Icon name="arrowleft" size={theme.SIZES.icon30} color={theme.COLORS.white} />
               </Text>
             </TouchableOpacity>
             <Text style={styles.heading}>Forgot Password?</Text>
           </View>
-          <Text style={styles.desc}>Enter the email address associated with your account.</Text>
-          <View style={styles.form}>
-            <View style={styles.inputGroup}>
-              <InputField 
-                label={'Email Address'}
-                style={styles.input} />
+          {!confirm ? (
+          <View>
+            <Text style={styles.desc}>Enter the email address associated with your account.</Text>
+            <View style={styles.form}>
+              <View style={styles.inputGroup}>
+                <InputField 
+                  label={'Email Address'}
+                  onChange={(txt) => handleChangeEmail(txt)}
+                  style={styles.input} />
+              </View>
+            </View>
+            <View style={styles.buttonWrap}>
+              <Button 
+                onPress={handleSubmit} />
             </View>
           </View>
-          <View style={styles.buttonWrap}>
-            <Button 
-              onPress={() => Alert.alert('Please check your email.')} />
-          </View>
+          ) : (<Text style={styles.desc}>Please check your email to reset password.</Text>)}
         </View>
       </View>
     </Page>

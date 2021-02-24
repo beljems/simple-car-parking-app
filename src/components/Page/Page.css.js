@@ -1,8 +1,11 @@
+import * as theme from '../../theme';
 import EStyleSheet from 'react-native-extended-stylesheet';
+
 const styles = EStyleSheet.create({
   container: {
     display: 'flex',
     width: '100%',
+    backgroundColor: theme.COLORS.base // remove background color on content
   },
   content: {
     height: '100%'
@@ -11,7 +14,6 @@ const styles = EStyleSheet.create({
     height: '100%',
     padding: '2rem',
   },
-  innerScroll: {},
   innerWrap: {
     width: '100%',
     height: '86.2%',
@@ -22,13 +24,13 @@ const styles = EStyleSheet.create({
   },
   headerWrap: {
     padding: '.5rem',
-    backgroundColor: '$skyblue'
+    backgroundColor: theme.COLORS.base
   },
   header: {
     marginTop: '.5rem',
     textAlign: 'center',
-    color: '$white',
-    fontFamily: '$fontRobotoBold',
+    color: theme.COLORS.lighterRed,
+    fontFamily: theme.FONTS.robotoBold,
     fontSize: '1.7rem',
   },
   settingWrap: {
@@ -38,21 +40,21 @@ const styles = EStyleSheet.create({
     paddingHorizontal: '.5rem'
   },
   back: {
-    color: '$white',
+    color: theme.COLORS.sky,
   },
   menu: {
-    marginLeft: 'auto',
+    marginLeft: 'auto'
   },
   menutext: {
-    fontFamily: '$fontRobotoBold',
-    color: '$white',
+    fontFamily: theme.FONTS.robotoBold,
+    color: theme.COLORS.sky,
     letterSpacing: 1.2,
     textTransform: 'uppercase',
   },
   footer: {
     width: '100%',
     height: '2rem',
-    backgroundColor: '$skyblue',
+    backgroundColor: theme.COLORS.base,
     borderTopLeftRadius: 100,
     borderTopRightRadius: 100
   }

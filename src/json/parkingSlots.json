@@ -1,0 +1,74 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "title": "Parking 1",
+      "price": 5,
+      "rating": 4.2,
+      "spots": 20,
+      "free": 10,
+      "coordinate": {
+        "latitude": 10.30167467977833,
+        "longitude": 123.87368592970938,
+      },
+      "distance": 2.5,
+      "description": "Description about this parking lot",
+    },
+    {
+      "id": 2,
+      "title": "Parking 2",
+      "price": 3,
+      "rating": 3.8,
+      "spots": 25,
+      "free": 20,
+      "coordinate": {
+        "latitude": 10.30030912749966,
+        "longitude": 123.87509849029408,
+      },
+      "distance": 3.5,
+      "description": "Description about this parking lot.",
+    },
+    {
+      "id": 3,
+      "title": "Parking 3",
+      "price": 4,
+      "rating": 4.9,
+      "spots": 50,
+      "free": 25,
+      "coordinate": {
+        "latitude": 10.298878927351623,
+        "longitude": 123.87382554325546,
+      },
+      "distance": 1,
+      "description": "Description about this parking lot.",
+    },
+    {
+      "id": 4,
+      "title": "Parking 4",
+      "price": 5.5,
+      "rating": 5,
+      "spots": 50,
+      "free": 25,
+      "coordinate": {
+        "latitude": 10.30059280092999,
+        "longitude": 123.87071109213093,
+      },
+      "distance": 2,
+      "description": "Description about this parking lot.",
+    },
+    {
+      "id": 5,
+      "title": "Parking 5",
+      "price": 2.4,
+      "rating": 3.6,
+      "spots": 45,
+      "free": 5,
+      "coordinate": {
+        "latitude": 10.301965513802884,
+        "longitude": 123.87280017082668,
+      },
+      "distance": 1,
+      "description": "Description about this parking lot.",
+    },
+  ]
+}

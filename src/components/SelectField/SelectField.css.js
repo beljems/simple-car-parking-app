@@ -1,3 +1,4 @@
+import * as theme from '../../theme';
 import EStyleSheet from 'react-native-extended-stylesheet';
 const styles = EStyleSheet.create({
   selectWrap: () => ({
@@ -10,7 +11,7 @@ const styles = EStyleSheet.create({
     paddingTop: '.8rem',
     width: '100%',
     height: '100%',
-    color: '$white',
+    color: theme.COLORS.sky,
     borderRadius: 5,
   },
   arrow: {
@@ -20,8 +21,8 @@ const styles = EStyleSheet.create({
   },
   label: {
     marginBottom: '0.5rem',
-    fontSize: '.9rem',
-    color: '$white'
+    fontSize: theme.SIZES.font,
+    color: theme.COLORS.sky
   }
 });
 

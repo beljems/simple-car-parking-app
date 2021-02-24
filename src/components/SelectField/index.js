@@ -6,16 +6,19 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import PropTypes from 'prop-types';
+import * as theme from '../../theme';
 import styles from './SelectField.css';
 
 const SelectField = ({
   label,
-  data
+  data,
+  onChange
 }) => {
-  const [value, setValue] = useState('Choose...');
+  const [value, setValue] = useState(data[0]);
   const options = data;
 
   const onPress = () => {
+
     ActionSheetIOS.showActionSheetWithOptions(
       {
         options: [...options, "Cancel"],
@@ -25,6 +28,10 @@ const SelectField = ({
       buttonIndex => {
         if (options[buttonIndex]) {
           setValue(options[buttonIndex]);
+          // console.log(options[buttonIndex]);
+          if (onChange) {
+            onChange(options[buttonIndex]);
+          }
         } 
       }
     );
@@ -42,19 +49,19 @@ const SelectField = ({
         <Text 
           style={styles.arrow}
           onPress={onPress}>
-          <Icon name="arrow-drop-down" size={30} color="#fff" />
+          <Icon name="arrow-drop-down" size={theme.SIZES.icon30} color={theme.COLORS.white} />
         </Text>
       </View>
     </View>
   );
 };
 
-SelectField.defaultProps = {
-};
+SelectField.defaultProps = {};
 
 SelectField.propTypes = {
   label: PropTypes.string,
-  data: PropTypes.array
+  data: PropTypes.array,
+  onChange: PropTypes.func
 };
 
 export default SelectField;

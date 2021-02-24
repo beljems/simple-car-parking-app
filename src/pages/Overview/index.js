@@ -8,6 +8,7 @@ import IconEntypo from 'react-native-vector-icons/Entypo';
 import IconDesign from 'react-native-vector-icons/AntDesign';
 import Page from '../../components/Page';
 import Button from '../../components/Button';
+import * as theme from '../../theme';
 import styles from './overview.css.js';
 
 const Home = ({navigation}) => {
@@ -36,10 +37,10 @@ const Home = ({navigation}) => {
               </View>
               <View style={styles.iconWrap}>
                 <Text style={styles.iconParking}>
-                  <Icon name="parking" size={45} color="#fff" />
+                  <Icon name="parking" size={theme.SIZES.icon40} color={theme.COLORS.white} />
                 </Text>
                 <Text style={styles.iconArrow}>
-                  <IconEntypo name="triangle-down" size={60} color="#42c2f5" />
+                  <IconEntypo name="triangle-down" size={60} color={theme.COLORS.lighterRed} />
                 </Text>
               </View>
             </>)}
@@ -52,7 +53,7 @@ const Home = ({navigation}) => {
               </View>
               <View style={[styles.iconWrap, styles.iconWrapNoBg]}>
                 <Text>
-                  <Icon name="magnify" size={75} color="#42c2f5" />
+                  <Icon name="magnify" size={75} color={theme.COLORS.lighterRed} />
                 </Text>
               </View>
             </>)}
@@ -65,7 +66,7 @@ const Home = ({navigation}) => {
               </View>
               <View style={[styles.iconWrap, styles.iconWrapNoBg]}>
                 <Text>
-                  <IconDesign name="creditcard" size={60} color="#42c2f5" />
+                  <IconDesign name="creditcard" size={60} color={theme.COLORS.lighterRed} />
                 </Text>
               </View>
             </>)}

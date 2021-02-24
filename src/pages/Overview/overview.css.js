@@ -1,31 +1,34 @@
+import * as theme from '../../theme';
 import EStyleSheet from 'react-native-extended-stylesheet';
+
 const styles = EStyleSheet.create({
   content: {
     height: '88%',
     paddingHorizontal: '1rem',
-    color: '$white',
+    color: theme.COLORS.sky,
   },
   inner: {
     display: 'flex',
     justifyContent: 'center',
     height: '100%',
   },
-  innerContent: {},
   name: {
     fontSize: '1.7rem',
     fontWeight: 'bold',
     textAlign: 'center',
-    color: '$skyblue'
+    color: theme.COLORS.lighterRed
   },
   heading: {
-    fontFamily: '$fontRobotoBold',
+    fontFamily: theme.FONTS.robotoBold,
     fontSize: '2rem',
-    textAlign: 'center'
+    textAlign: 'center',
+    color: theme.COLORS.sky
   },
   desc: {
     marginTop: '1.5rem',
     fontSize: '1.2rem',
-    textAlign: 'center'
+    textAlign: 'center',
+    color: theme.COLORS.sky
   },
   iconWrap: () => ({
     ...EStyleSheet.value('$logo'),

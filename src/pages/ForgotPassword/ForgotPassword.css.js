@@ -1,9 +1,10 @@
+import * as theme from '../../theme';
 import EStyleSheet from 'react-native-extended-stylesheet';
 const styles = EStyleSheet.create({
   content: {
     height: '95%',
     paddingHorizontal: '1rem',
-    color: '$white'
+    color: theme.COLORS.sky
   },
   inner: {
     paddingTop: '3rem',
@@ -18,12 +19,12 @@ const styles = EStyleSheet.create({
   heading: {
     fontSize: '1.5rem',
     fontWeight: 'bold',
-    color: '$white'
+    color: theme.COLORS.sky
   },
   desc: {
     marginTop: '2rem',
-    fontSize: '1rem',
-    color: '$white'
+    fontSize: theme.SIZES.font,
+    color: theme.COLORS.sky
   },
   form: {
     marginTop: '2rem'
@@ -39,6 +40,7 @@ const styles = EStyleSheet.create({
     height: '2.5rem',
   },
   buttonWrap: {
+    marginTop: '1rem',
     width: '60%',
     alignSelf: 'center'
   },

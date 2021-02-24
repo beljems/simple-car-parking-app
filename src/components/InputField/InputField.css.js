@@ -1,4 +1,6 @@
+import * as theme from '../../theme';
 import EStyleSheet from 'react-native-extended-stylesheet';
+
 const styles = EStyleSheet.create({
   input: () => ({
     ...EStyleSheet.value('$input')
@@ -9,8 +11,8 @@ const styles = EStyleSheet.create({
   }),
   label: {
     marginBottom: '0.5rem',
-    fontSize: '.9rem',
-    color: '$black'
+    fontSize: theme.SIZES.font,
+    color: theme.COLORS.sky
   }
 });
 

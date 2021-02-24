@@ -7,7 +7,8 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import IconEntypo from 'react-native-vector-icons/Entypo';
 import Page from '../../components/Page';
 import Loading from '../../components/Loading';
-import styles from './welcome.css.js';
+import * as theme from '../../theme';
+import styles from './welcome.css';
 
 const Home = ({navigation}) => {
   const [loading, setLoading] = useState(true);
@@ -34,10 +35,10 @@ const Home = ({navigation}) => {
           <View style={styles.inner}>
             <View style={styles.iconWrap}>
               <Text style={styles.iconParking}>
-                <Icon name="parking" size={40} color="#fff" />
+                <Icon name="parking" size={theme.SIZES.icon40} color={theme.COLORS.white} />
               </Text>
               <Text style={styles.iconArrow}>
-                <IconEntypo name="triangle-down" size={35} color="#42c2f5" />
+                <IconEntypo name="triangle-down" size={theme.SIZES.icon40} color={theme.COLORS.lighterRed} />
               </Text>
             </View>
             <View style={styles.headingWrap}>

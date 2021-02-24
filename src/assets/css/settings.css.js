@@ -1,41 +1,23 @@
+import * as theme from '../../theme';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
 EStyleSheet.build({ 
-  $red: '#f00',
-  $gray: '#7D818A',
-  $lightGray: '#d6d6d6',
-  $lighterRed: '#d95965',
-  $white: '#fff',
-  $dark: '#2b2b2b',
-  $black: '#000',
-  $skyblue: '#42c2f5',
-
-  $fontDancing: 'DancingScript-Regular',
-  $fontRoboto: 'Roboto-Regular',
-  $fontRobotoBold: 'Roboto-Bold',
-
   $inputGroup: {
     marginBottom: '1rem'  
   },
   $input: {
     paddingHorizontal: '1rem',
     height: '3rem',
-    backgroundColor: '$dark',
-    color: '$white',
-    borderRadius: 5,
-    borderColor: '$gray',
-    borderWidth: 1
+    fontSize: theme.SIZES.font,
+    color: theme.COLORS.sky,
+    backgroundColor: theme.COLORS.inputColor,
+    borderRadius: 20,
   },
   $border: {
     paddingBottom: '.5rem',
     marginBottom: '1.5rem',
-    borderBottomWidth: 1,
-    borderBottomColor: '$lightGray' 
-  },
-  $subMenuHeading: {
-    fontSize: '1rem',
-    fontWeight: 'bold',
-    color: '$white'
+    borderWidth: 1,
+    borderBottomColor: theme.COLORSlightGray
   },
   $logo: {
     display: 'flex',
@@ -46,7 +28,7 @@ EStyleSheet.build({
     height: '4rem',
     borderRadius: 100,
     alignSelf: 'center',
-    backgroundColor: '$skyblue'
+    backgroundColor: theme.COLORS.lighterRed
   },
   $logoArrow: {
     position: 'absolute',

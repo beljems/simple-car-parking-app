@@ -9,10 +9,7 @@ import Register from './pages/Register';
 import Welcome from './pages/Welcome';
 import Home from './pages/Home';
 import Overview from './pages/Overview';
-import UserMenu from './pages/UserMenu';
-import Notifications from './pages/Notifications';
-import Message from './pages/Message';
-import Search from './pages/Search';
+import Payment from './pages/Payment';
 
 import './assets/css/settings.css';
 
@@ -29,11 +26,10 @@ const App = () => {
         <Stack.Screen name="Welcome" component={Welcome} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Overview" component={Overview} />
-        <Stack.Screen name="Home" component={Home} options={{ title: 'Welcome' }} />
-        <Stack.Screen name="UserMenu" component={UserMenu} />
-        <Stack.Screen name="Notifications" component={Notifications} />
-        <Stack.Screen name="Message" component={Message} />
-        <Stack.Screen name="Search" component={Search} />
+        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
+        <Stack.Screen name="Register" component={Register} />
+        <Stack.Screen name="Payment" component={Payment} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -1,0 +1,26 @@
+{
+  "all": {
+    "required": "Fill out all required fields."
+  },
+  "email": {
+    "required": "Email must not be empty."
+  },
+  "password": {
+    "required": "Password must not be empty.",
+    "confirm": {
+      "required": "Confirm password must match not be empty.",
+      "match": "Confirm password must match the password.",
+    },
+  },
+  "mobile": {
+    "required": "Mobile must not be empty.",
+  },
+  "card": {
+    "number": "Card number must match not be empty.",
+    "name": "Account name must match not be empty.",
+  },
+  "agree": {
+    "required": "You must agree with our terms and conditions.",
+    "payment": "You must agree to confirm payment details.",
+  }
+}

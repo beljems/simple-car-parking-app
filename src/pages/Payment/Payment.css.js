@@ -43,25 +43,26 @@ const styles = EStyleSheet.create({
     left: '.6rem',
     zIndex: 1
   },
+  total: {
+    marginVertical: '2rem',
+    flexDirection: 'row',
+    alignItems: 'center'
+  },
+  totalText: {
+    fontFamily: theme.FONTS.robotoBold,
+    fontSize: '1.5rem',
+    color: theme.COLORS.sky
+  },
+  totalPrice: {
+    marginLeft: 'auto',
+    paddingVertical: '.2rem', 
+    paddingHorizontal: '2rem', 
+    color: theme.COLORS.black,
+    backgroundColor: theme.COLORS.white
+  },
   buttonWrap: {
     width: '60%',
     alignSelf: 'center'
-  },
-  create: {
-    marginTop: '2rem',
-    flexDirection: 'row',
-    justifyContent: 'center'
-  },
-  createText: {
-    color: theme.COLORS.sky,
-  },
-  createLink: {
-    marginLeft: '.2rem',
-    borderBottomWidth: 1,
-    borderBottomColor: theme.COLORS.sky
-  },
-  createLinkText: {
-    color: theme.COLORS.sky,
   },
   terms: {
     color: theme.COLORS.sky,
@@ -84,6 +85,11 @@ const styles = EStyleSheet.create({
   },
   success: {
     marginTop: '2.5rem',
+    fontSize: theme.SIZES.font,
+    color: theme.COLORS.sky
+  },
+  thankyou: {
+    marginTop: '1rem',
     fontSize: theme.SIZES.font,
     color: theme.COLORS.sky
   }

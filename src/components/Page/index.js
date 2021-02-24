@@ -6,12 +6,14 @@ import {
   ScrollView,
   KeyboardAvoidingView,
   TouchableOpacity,
+  TouchableWithoutFeedback,
   Platform
 } from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import IconIons from 'react-native-vector-icons/Ionicons';
+import IconEntypo from 'react-native-vector-icons/Entypo';
 import PropTypes from 'prop-types';
+import * as theme from '../../theme';
 import styles from './Page.css';
 
 const Page = ({
@@ -40,12 +42,12 @@ const Page = ({
               <TouchableOpacity 
                 onPress={() => navigation.pop()}
                 style={styles.back}>
-                <Icon name="arrow-back" size={30} color="#fff" />
+                <Icon name="arrow-back" size={theme.SIZES.icon30} color={theme.COLORS.white} />
               </TouchableOpacity>)}
               <TouchableOpacity 
-                style={styles.menu}>
-                <Text style={styles.menutext}>Menu</Text>
-                {/* <IconIons name="settings-sharp" size={30} color="#fff" /> */}
+                style={styles.menu}
+                >
+                <IconEntypo name="menu" size={theme.SIZES.icon40} color={theme.COLORS.white} />
               </TouchableOpacity>
             </View>)}
           </SafeAreaView>

@@ -47,7 +47,7 @@ const Home = ({navigation}) => {
         pagingEnabled
         scrollEnabled
         showsHorizontalScrollIndicator={false}
-        scrollEventThrottle={theme.SIZES.iconSmall}
+        scrollEventThrottle={theme.SIZES.icon}
         snapToAlignment="center"
         style={styles.parkings}
         data={parkingSlots}

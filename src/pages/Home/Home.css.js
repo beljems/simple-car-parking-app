@@ -161,6 +161,8 @@ const styles = EStyleSheet.create({
   modalContainer: {
     margin: 0,
     justifyContent: 'flex-end',
+    position: 'relative',
+    zIndex: 1
   },
   modal: {
     flexDirection: 'column',

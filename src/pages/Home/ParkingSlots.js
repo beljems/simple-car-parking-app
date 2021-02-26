@@ -24,9 +24,9 @@ const ParkingSlots = ({ parking }) => {
 
   // console.log(hoursValue);
 
-  // useEffect(() => {
-  //   setVisible(visible)
-  // }, [])
+  useEffect(() => {
+    setVisible(visible)
+  }, [])
 
   const handleParking = () => {
     setActiveModal(parking)
@@ -64,25 +64,25 @@ const ParkingSlots = ({ parking }) => {
           <View style={styles.modalInfo}>
             <View style={styles.modalIcon}>
               <Text>
-                <IconIons name="pricetag" size={theme.SIZES.iconSmall} color={theme.COLORS.black} />
+                <IconIons name="pricetag" size={theme.SIZES.icon} color={theme.COLORS.black} />
               </Text>
               <Text style={styles.modalInfoDetails}> ${activeModal.price}</Text>
             </View>
             <View style={styles.modalIcon}>
               <Text>
-                <IconIons name="star" size={theme.SIZES.iconSmall} color={theme.COLORS.black} />
+                <IconIons name="star" size={theme.SIZES.icon} color={theme.COLORS.black} />
               </Text>
               <Text style={styles.modalInfoDetails}> {activeModal.rating}</Text>
             </View>
             <View style={styles.modalIcon}>
               <Text>
-                <IconEntypo name="location-pin" size={theme.SIZES.iconSmall} color={theme.COLORS.black} />
+                <IconEntypo name="location-pin" size={theme.SIZES.icon} color={theme.COLORS.black} />
               </Text>
               <Text style={styles.modalInfoDetails}> {activeModal.distance}km</Text>
             </View>
             <View style={styles.modalIcon}>
               <Text>
-                <IconIons name="car-sport" size={theme.SIZES.iconSmall} color={theme.COLORS.black} />
+                <IconIons name="car-sport" size={theme.SIZES.icon} color={theme.COLORS.black} />
               </Text>
               <Text style={styles.modalInfoDetails}> {activeModal.free}/{activeModal.spots}</Text>
             </View>
@@ -111,7 +111,7 @@ const ParkingSlots = ({ parking }) => {
             <Text style={styles.payText}>
               Proceed to pay ${hasDecimal(totalPrice) === true ? totalPrice.toFixed(2) : totalPrice}
             </Text>
-            <IconEntypo name='chevron-right' size={theme.SIZES.iconSmall * 1.75} color={theme.COLORS.white} />
+            <IconEntypo name='chevron-right' size={theme.SIZES.icon * 1.75} color={theme.COLORS.white} />
           </TouchableOpacity>
         </View>
        </Modal>
@@ -143,11 +143,11 @@ const ParkingSlots = ({ parking }) => {
       <View style={[styles.parkingColumn, styles.parkingColumnPrice]}>
         <View>
           <Text style={styles.icons}>
-            <IconIons name="pricetag" size={theme.SIZES.iconSmall} color={theme.COLORS.black} />
+            <IconIons name="pricetag" size={theme.SIZES.icon} color={theme.COLORS.black} />
              ${parking.price}
           </Text>
           <Text style={styles.icons}>
-            <IconEntypo name="star" size={theme.SIZES.iconSmall} color={theme.COLORS.black} />
+            <IconEntypo name="star" size={theme.SIZES.icon} color={theme.COLORS.black} />
              {parking.rating}
           </Text>
         </View>
@@ -156,7 +156,7 @@ const ParkingSlots = ({ parking }) => {
           <View style={styles.buyTotal}>
             <View style={styles.buyTotalInner}>
               <Text>
-                <IconAwe name='dollar' size={theme.SIZES.iconSmall * 1.4} color={theme.COLORS.white} />
+                <IconAwe name='dollar' size={theme.SIZES.icon * 1.4} color={theme.COLORS.white} />
               </Text>
               <Text style={styles.buyTotalPrice}>{hasDecimal(totalPrice) === true ? totalPrice.toFixed(2) : totalPrice}</Text>
             </View>
@@ -165,7 +165,7 @@ const ParkingSlots = ({ parking }) => {
             </Text>
           </View>
           <View style={styles.buyButton}>
-            <IconEntypo name='chevron-right' size={theme.SIZES.iconSmall * 1.75} color={theme.COLORS.white} />
+            <IconEntypo name='chevron-right' size={theme.SIZES.icon * 1.75} color={theme.COLORS.white} />
           </View>
         </TouchableOpacity>
       </View>

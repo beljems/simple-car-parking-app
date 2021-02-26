@@ -6,7 +6,6 @@ import {
   ScrollView,
   KeyboardAvoidingView,
   TouchableOpacity,
-  TouchableWithoutFeedback,
   Platform
 } from 'react-native';
 import {useNavigation} from '@react-navigation/native';

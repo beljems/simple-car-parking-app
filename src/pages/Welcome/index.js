@@ -8,7 +8,7 @@ import IconEntypo from 'react-native-vector-icons/Entypo';
 import Page from '../../components/Page';
 import Loading from '../../components/Loading';
 import * as theme from '../../theme';
-import styles from './welcome.css';
+import styles from './Welcome.css';
 
 const Home = ({navigation}) => {
   const [loading, setLoading] = useState(true);
